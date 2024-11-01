@@ -1,0 +1,5 @@
+Beginner Godot Tutorial - Make Flappy Bird in 12 Minutes!
+https://www.youtube.com/watch?v=9f9t9eiCDAA
+
+Flappy Bird Assets - Pixel Art by MegaCrash
+https://megacrash.itch.io/flappy-bird-assets

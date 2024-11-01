@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqpdnen3mmpvt"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_3agbv"]
+[ext_resource type="Texture2D" uid="uid://cimesn601ahqk" path="res://assets/sprites/tuah.png" id="2_7k171"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lhkw3"]
+radius = 50.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_3agbv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7k171")
+region_enabled = true
+region_rect = Rect2(71, 6, 158, 156)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lhkw3")
