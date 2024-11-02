@@ -1,15 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://dob5tqgyakn3v"]
+[gd_scene load_steps=5 format=3 uid="uid://dob5tqgyakn3v"]
 
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_b2yd8"]
 [ext_resource type="Texture2D" uid="uid://cepyg81km0gpf" path="res://assets/sprites/background.png" id="1_ldf4p"]
 [ext_resource type="PackedScene" uid="uid://dqpdnen3mmpvt" path="res://scenes/player.tscn" id="2_3xabt"]
+[ext_resource type="PackedScene" uid="uid://cielxlkut4td7" path="res://scenes/ground.tscn" id="4_jd8nd"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_b2yd8")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_ldf4p")
 offset = Vector2(128, 128)
 
 [node name="Player" parent="." instance=ExtResource("2_3xabt")]
-z_index = 1
 position = Vector2(128, 128)
 scale = Vector2(0.25, 0.25)
+
+[node name="Ground" parent="." instance=ExtResource("4_jd8nd")]
+position = Vector2(0, 272)

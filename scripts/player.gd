@@ -8,12 +8,8 @@ var flying = false
 var falling = false
 
 
-# Called when the node enters the scene for the first time
 func _ready() -> void:
-	flying = false
-	falling = false
-	position = START_POS
-	set_rotation(0)
+	reset()
 
 
 func _physics_process(delta):
@@ -29,6 +25,13 @@ func _physics_process(delta):
 			set_rotation(PI / 2)
 
 		move_and_collide(velocity * delta)
+
+
+func reset():
+	flying = false
+	falling = false
+	position = START_POS
+	set_rotation(0)
 
 
 func flap():
