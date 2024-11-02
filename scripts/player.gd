@@ -6,6 +6,9 @@ const MAX_VELOCITY = 600
 const FLAP_SPEED = -500
 var flying = false
 var falling = false
+var hawk = true
+@onready var hawkAudio = $Hawk
+@onready var tuahAudio = $Tuah
 
 
 func _ready() -> void:
@@ -35,4 +38,10 @@ func reset():
 
 
 func flap():
+	if hawk:
+		hawkAudio.play()
+		hawk = false
+	else:
+		tuahAudio.play()
+		hawk = true
 	velocity.y = FLAP_SPEED
