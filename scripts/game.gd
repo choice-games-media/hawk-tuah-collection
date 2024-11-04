@@ -2,7 +2,7 @@ extends Node2D
 
 const SCROLL_SPEED = 2
 const PIPE_DELAY = 100
-const PIPE_RANGE = 200
+const PIPE_RANGE = 50
 var game_running = false
 var game_over = false
 var scroll

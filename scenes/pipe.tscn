@@ -13,32 +13,34 @@ size = Vector2(26, 96)
 size = Vector2(32, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kd73x"]
-size = Vector2(26, 80)
+size = Vector2(26, 96)
 
 [node name="Pipe" type="Area2D"]
 script = ExtResource("1_6kok1")
 
-[node name="Upper" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAABAAYAAAAAAAIAAAABAAAAAAAAAAEAAAABAAEAAAAAAAEAAAABAAIAAAAAAAEAAAABAAMAAAAAAAEAAAABAAQAAAAAAAEAAAABAAUAAAAAAAEAAAABAAoAAAAAAAAAAAABAAsAAAAAAAEAAAABAAwAAAAAAAEAAAABAA0AAAAAAAEAAAABAA4AAAAAAAEAAAABAA8AAAAAAAEAAAA=")
+[node name="Sprite" type="TileMapLayer" parent="."]
+position = Vector2(-8, 0)
+tile_map_data = PackedByteArray("AAAAAPj/AAAAAAEAAAAAAPn/AAAAAAEAAAAAAPr/AAAAAAEAAAAAAPv/AAAAAAEAAAAAAPz/AAAAAAEAAAAAAP3/AAAAAAIAAAAAAPf/AAAAAAEAAAAAAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAEAAAAAAAoAAAAAAAEAAAAAAAsAAAAAAAEAAAAAAAwAAAAAAAEAAAAAAA0AAAAAAAEAAAAAAA4AAAAAAAEAAAAAAA8AAAAAAAEAAAAAAPb/AAAAAAEAAAAAAPX/AAAAAAEAAAAAAPT/AAAAAAEAAAAAAPP/AAAAAAEAAAAAAPL/AAAAAAEAAAAAAPH/AAAAAAEAAAAAAOX/AAAAAAEAAAAAAOb/AAAAAAEAAAAAAOf/AAAAAAEAAAAAAOj/AAAAAAEAAAAAAOn/AAAAAAEAAAAAAOr/AAAAAAEAAAAAAOv/AAAAAAEAAAAAAOz/AAAAAAEAAAAAAO3/AAAAAAEAAAAAAO7/AAAAAAEAAAAAAO//AAAAAAEAAAAAAPD/AAAAAAEAAAAAABAAAAAAAAEAAAAAABEAAAAAAAEAAAAAABIAAAAAAAEAAAAAABMAAAAAAAEAAAAAABQAAAAAAAEAAAAAABUAAAAAAAEAAAAAABYAAAAAAAEAAAAAABcAAAAAAAEAAAAAABgAAAAAAAEAAAAAABkAAAAAAAEAAAAAABoAAAAAAAEAAAAAABsAAAAAAAEAAAA=")
 tile_set = ExtResource("1_5sox5")
 
 [node name="TopNub" type="CollisionShape2D" parent="."]
-position = Vector2(24, 104)
+visible = false
+position = Vector2(0, -56)
 shape = SubResource("RectangleShape2D_6os7j")
 
 [node name="TopBody" type="CollisionShape2D" parent="."]
-position = Vector2(24, 48)
+visible = false
+position = Vector2(0, -112)
 shape = SubResource("RectangleShape2D_7u4jh")
 
-[node name="Lower" type="TileMapLayer" parent="."]
-tile_set = ExtResource("1_5sox5")
-
 [node name="BottomNub" type="CollisionShape2D" parent="."]
-position = Vector2(24, 168)
+visible = false
+position = Vector2(0, 72)
 shape = SubResource("RectangleShape2D_33ew8")
 
 [node name="BottomBody" type="CollisionShape2D" parent="."]
-position = Vector2(24, 216)
+visible = false
+position = Vector2(0, 128)
 shape = SubResource("RectangleShape2D_kd73x")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
