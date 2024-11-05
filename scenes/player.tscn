@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cimesn601ahqk" path="res://assets/sprites/hailey.png" id="2_7k171"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lhkw3"]
-radius = 50.0
+radius = 40.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_3agbv")

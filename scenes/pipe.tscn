@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://d2jql552jpv2o"]
+[gd_scene load_steps=8 format=4 uid="uid://d2jql552jpv2o"]
 
 [ext_resource type="TileSet" uid="uid://bwcksl82rseej" path="res://assets/sprites/tileset.tres" id="1_5sox5"]
 [ext_resource type="Script" path="res://scripts/pipe.gd" id="1_6kok1"]
@@ -15,7 +15,10 @@ size = Vector2(32, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kd73x"]
 size = Vector2(26, 384)
 
-[node name="Pipe" type="Area2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dc2al"]
+size = Vector2(6, 80)
+
+[node name="Pipe" type="Area2D" groups=["pipes"]]
 script = ExtResource("1_6kok1")
 
 [node name="Sprite" type="TileMapLayer" parent="."]
@@ -39,4 +42,11 @@ shape = SubResource("RectangleShape2D_33ew8")
 position = Vector2(0, 256)
 shape = SubResource("RectangleShape2D_kd73x")
 
+[node name="ScoringArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoringArea"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_dc2al")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="ScoringArea" to="." method="_on_scoring_area_body_entered"]

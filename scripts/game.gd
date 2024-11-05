@@ -10,9 +10,14 @@ var score: int
 var screen_size: Vector2i
 var ground_height: int
 var pipes: Array
+var score_up_audio: AudioStream = preload("res://assets/sfx/spit_on_that_thang.mp3")
+var hawk_tuah_audio: AudioStream = preload("res://assets/sfx/angry_hawk_tuah.mp3")
 @onready var player: CharacterBody2D = $Player
 @onready var ground: Area2D = $Ground
 @onready var pipe_timer: Timer = $PipeTimer
+@onready var score_label: Label = $Background/ScoreLabel
+@onready var restart_button: CanvasLayer = $RestartButton
+@onready var audio_player: AudioStreamPlayer2D = $AudioPlayer
 @export var pipe_scene: PackedScene
 
 
@@ -33,6 +38,8 @@ func _input(_event: InputEvent) -> void:  # There's probably a more efficient wa
 			else:
 				if player.flying:
 					player.flap()
+					if player.position.y < 0:  # Player is off the screen
+						_stop_game()
 
 
 func _process(_delta: float) -> void:
@@ -55,11 +62,15 @@ func _on_pipe_timer_timeout() -> void:
 func _new_game() -> void:
 	game_running = false
 	game_over = false
+	pipes.clear()
+	get_tree().call_group("pipes", "queue_free")
 	scroll = 0
 	score = 0
-	pipes.clear()
-	_generate_pipes()
+	score_label.text = "SCORE: " + str(score)
 	player.reset()
+	player.hawk = true
+	restart_button.hide()
+	_generate_pipes()
 
 
 func _start_game() -> void:
@@ -70,17 +81,43 @@ func _start_game() -> void:
 
 
 func _stop_game() -> void:
-	pass
+	if not game_over:
+		audio_player.stream = hawk_tuah_audio
+		audio_player.play()
+
+	player.flying = false
+	player.falling = true
+	game_running = false
+	game_over = true
+	pipe_timer.stop()
+	restart_button.show()
 
 
 func _generate_pipes() -> void:
 	var pipe = pipe_scene.instantiate()
 	pipe.position.x = screen_size.x + PIPE_DELAY  # Puts the pipe off screen, so it slides in from the right later on
 	pipe.position.y = (screen_size.y - ground_height) / 2 + randi_range(-PIPE_RANGE, PIPE_RANGE)  # Available vertical space after the ground + a random value
-	pipe.hit.connect(_bird_hit)
+	pipe.hit.connect(_on_pipe_hit)
+	pipe.scored.connect(_update_score)
 	add_child(pipe)
 	pipes.append(pipe)
 
 
-func _bird_hit() -> void:
-	pass
+func _on_pipe_hit() -> void:
+	_stop_game()
+
+
+func _on_ground_hit() -> void:
+	_stop_game()
+
+
+func _update_score() -> void:
+	score += 1
+	if score % 5 == 0:
+		audio_player.stream = score_up_audio
+		audio_player.play()
+	score_label.text = "SCORE: " + str(score)
+
+
+func _on_restart_button() -> void:
+	_new_game()

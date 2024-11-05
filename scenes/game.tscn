@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dob5tqgyakn3v"]
+[gd_scene load_steps=8 format=3 uid="uid://dob5tqgyakn3v"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_b2yd8"]
 [ext_resource type="Texture2D" uid="uid://cepyg81km0gpf" path="res://assets/sprites/background.png" id="1_ldf4p"]
 [ext_resource type="PackedScene" uid="uid://d2jql552jpv2o" path="res://scenes/pipe.tscn" id="2_1qnw0"]
 [ext_resource type="PackedScene" uid="uid://dqpdnen3mmpvt" path="res://scenes/player.tscn" id="2_3xabt"]
+[ext_resource type="FontFile" uid="uid://cchunaytwy3l2" path="res://assets/fonts/VPPixel-Simplified.otf" id="4_hbbra"]
 [ext_resource type="PackedScene" uid="uid://cielxlkut4td7" path="res://scenes/ground.tscn" id="4_jd8nd"]
+[ext_resource type="PackedScene" uid="uid://dq2gl6uil6db0" path="res://scenes/restart_button.tscn" id="7_5gqwf"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_b2yd8")
@@ -14,7 +16,23 @@ pipe_scene = ExtResource("2_1qnw0")
 texture = ExtResource("1_ldf4p")
 offset = Vector2(128, 128)
 
+[node name="ScoreLabel" type="Label" parent="Background"]
+z_index = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_hbbra")
+theme_override_font_sizes/font_size = 20
+text = "SCORE: 0"
+horizontal_alignment = 1
+
 [node name="Player" parent="." instance=ExtResource("2_3xabt")]
+z_index = 2
 position = Vector2(128, 128)
 scale = Vector2(0.25, 0.25)
 
@@ -25,4 +43,10 @@ position = Vector2(0, 256)
 [node name="PipeTimer" type="Timer" parent="."]
 wait_time = 1.5
 
+[node name="RestartButton" parent="." instance=ExtResource("7_5gqwf")]
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="hit" from="Ground" to="." method="_on_ground_hit"]
 [connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]
+[connection signal="restart" from="RestartButton" to="." method="_on_restart_button"]

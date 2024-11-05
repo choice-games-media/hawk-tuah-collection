@@ -7,8 +7,8 @@ const FLAP_SPEED = -300
 var flying: bool = false
 var falling: bool = false
 var hawk: bool = true
-var hawk_audio: AudioStream = preload("res://assets/sfx/hawk.ogg")
-var tuah_audio: AudioStream = preload("res://assets/sfx/tuah.ogg")
+var hawk_audio: AudioStream = preload("res://assets/sfx/hawk.mp3")
+var tuah_audio: AudioStream = preload("res://assets/sfx/tuah.mp3")
 @onready var audio_player: AudioStreamPlayer2D = $AudioPlayer
 
 
