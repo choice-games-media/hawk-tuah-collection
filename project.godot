@@ -16,10 +16,14 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/image="res://assets/icon.png"
 config/icon="res://assets/icon.png"
 
+[debug]
+
+gdscript/warnings/integer_division=0
+
 [display]
 
-window/size/viewport_width=256
-window/size/viewport_height=304
+window/size/viewport_width=512
+window/size/viewport_height=608
 window/size/resizable=false
 
 [editor_plugins]

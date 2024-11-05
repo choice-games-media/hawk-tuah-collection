@@ -1,8 +1,8 @@
 extends Node2D
 
 const SCROLL_SPEED: int = 2
-const PIPE_DELAY: int = 100
-const PIPE_RANGE: int = 50
+const PIPE_DELAY: int = 200
+const PIPE_RANGE: int = 150
 var game_running: bool = false
 var game_over: bool = false
 var scroll: int

@@ -13,6 +13,7 @@ script = ExtResource("1_b2yd8")
 pipe_scene = ExtResource("2_1qnw0")
 
 [node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("1_ldf4p")
 offset = Vector2(128, 128)
 
@@ -33,12 +34,13 @@ horizontal_alignment = 1
 
 [node name="Player" parent="." instance=ExtResource("2_3xabt")]
 z_index = 2
-position = Vector2(128, 128)
-scale = Vector2(0.25, 0.25)
+position = Vector2(128, 256)
+scale = Vector2(0.35, 0.35)
 
 [node name="Ground" parent="." instance=ExtResource("4_jd8nd")]
 z_index = 1
-position = Vector2(0, 256)
+position = Vector2(0, 512)
+scale = Vector2(2, 2)
 
 [node name="PipeTimer" type="Timer" parent="."]
 wait_time = 1.5
