@@ -1,21 +1,22 @@
 extends CharacterBody2D
 
-const START_POS = Vector2(128, 128)
-const GRAVITY = 1000
-const MAX_VELOCITY = 600
+const START_POS: Vector2 = Vector2(128, 128)
+const GRAVITY: int = 1000
+const MAX_VELOCITY: int = 600
 const FLAP_SPEED = -300
-var flying = false
-var falling = false
-var hawk = true
-@onready var hawkAudio = $Hawk
-@onready var tuahAudio = $Tuah
+var flying: bool = false
+var falling: bool = false
+var hawk: bool = true
+var hawk_audio: AudioStream = preload("res://assets/sfx/hawk.ogg")
+var tuah_audio: AudioStream = preload("res://assets/sfx/tuah.ogg")
+@onready var audio_player: AudioStreamPlayer2D = $AudioPlayer
 
 
 func _ready() -> void:
 	reset()
 
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	if flying or falling:
 		velocity.y += GRAVITY * delta
 
@@ -30,18 +31,19 @@ func _physics_process(delta):
 		move_and_collide(velocity * delta)
 
 
-func reset():
+func reset() -> void:
 	flying = false
 	falling = false
 	position = START_POS
 	set_rotation(0)
 
 
-func flap():
+func flap() -> void:
 	if hawk:
-		hawkAudio.play()
+		audio_player.stream = hawk_audio
 		hawk = false
 	else:
-		tuahAudio.play()
+		audio_player.stream = tuah_audio
 		hawk = true
+	audio_player.play()
 	velocity.y = FLAP_SPEED

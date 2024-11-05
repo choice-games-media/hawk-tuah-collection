@@ -1,18 +1,18 @@
 extends Node2D
 
-const SCROLL_SPEED = 2
-const PIPE_DELAY = 100
-const PIPE_RANGE = 50
-var game_running = false
-var game_over = false
-var scroll
-var score
-var screen_size
-var ground_height
-var pipes = []
-@onready var player = $Player
-@onready var ground = $Ground
-@onready var pipe_timer = $PipeTimer
+const SCROLL_SPEED: int = 2
+const PIPE_DELAY: int = 100
+const PIPE_RANGE: int = 50
+var game_running: bool = false
+var game_over: bool = false
+var scroll: int
+var score: int
+var screen_size: Vector2i
+var ground_height: int
+var pipes: Array
+@onready var player: CharacterBody2D = $Player
+@onready var ground: TileMapLayer = $Ground
+@onready var pipe_timer: Timer = $PipeTimer
 @export var pipe_scene: PackedScene
 
 
@@ -25,7 +25,7 @@ func _ready() -> void:
 	_new_game()
 
 
-func _input(_event):
+func _input(_event: InputEvent) -> void:  # There's probably a more efficient way of doing this
 	if not game_over:
 		if Input.is_action_just_pressed("flap"):
 			if not game_running:
@@ -48,35 +48,39 @@ func _process(_delta: float) -> void:
 			pipe.position.x -= SCROLL_SPEED
 
 
-func _new_game():
+func _on_pipe_timer_timeout() -> void:
+	_generate_pipes()
+
+
+func _new_game() -> void:
 	game_running = false
 	game_over = false
 	scroll = 0
 	score = 0
 	pipes.clear()
-	generate_pipes()
+	_generate_pipes()
 	player.reset()
 
 
-func _start_game():
+func _start_game() -> void:
 	game_running = true
 	player.flying = true
 	player.flap()
 	pipe_timer.start()
 
 
-func _on_pipe_timer_timeout() -> void:
-	generate_pipes()
+func _stop_game() -> void:
+	pass
 
 
-func generate_pipes():
+func _generate_pipes() -> void:
 	var pipe = pipe_scene.instantiate()
 	pipe.position.x = screen_size.x + PIPE_DELAY  # Puts the pipe off screen, so it slides in from the right later on
 	pipe.position.y = (screen_size.y - ground_height) / 2 + randi_range(-PIPE_RANGE, PIPE_RANGE)  # Available vertical space after the ground + a random value
-	pipe.hit.connect(bird_hit)
+	pipe.hit.connect(_bird_hit)
 	add_child(pipe)
 	pipes.append(pipe)
 
 
-func bird_hit():
+func _bird_hit() -> void:
 	pass
