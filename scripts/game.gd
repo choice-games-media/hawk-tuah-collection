@@ -11,7 +11,7 @@ var screen_size: Vector2i
 var ground_height: int
 var pipes: Array
 @onready var player: CharacterBody2D = $Player
-@onready var ground: TileMapLayer = $Ground
+@onready var ground: Area2D = $Ground
 @onready var pipe_timer: Timer = $PipeTimer
 @export var pipe_scene: PackedScene
 

@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqpdnen3mmpvt"]
+[gd_scene load_steps=4 format=3 uid="uid://dqpdnen3mmpvt"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3agbv"]
 [ext_resource type="Texture2D" uid="uid://cimesn601ahqk" path="res://assets/sprites/hailey.png" id="2_7k171"]
-[ext_resource type="Script" path="res://scripts/audio_player.gd" id="5_h4237"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lhkw3"]
 radius = 50.0
@@ -19,4 +18,3 @@ region_rect = Rect2(71, 6, 158, 156)
 shape = SubResource("CircleShape2D_lhkw3")
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
-script = ExtResource("5_h4237")
