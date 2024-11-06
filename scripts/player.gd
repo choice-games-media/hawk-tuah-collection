@@ -7,9 +7,8 @@ const FLAP_SPEED = -300
 var flying: bool = false
 var falling: bool = false
 var hawk: bool = true
-var hawk_audio: AudioStream = preload("res://assets/sfx/hawk.mp3")
-var tuah_audio: AudioStream = preload("res://assets/sfx/tuah.mp3")
-@onready var audio_player: AudioStreamPlayer2D = $AudioPlayer
+@onready var hawk_audio: AudioStreamPlayer2D = $Hawk
+@onready var tuah_audio: AudioStreamPlayer2D = $Tuah
 
 
 func _ready() -> void:
@@ -40,10 +39,9 @@ func reset() -> void:
 
 func flap() -> void:
 	if hawk:
-		audio_player.stream = hawk_audio
+		hawk_audio.play()
 		hawk = false
 	else:
-		audio_player.stream = tuah_audio
+		tuah_audio.play()
 		hawk = true
-	audio_player.play()
 	velocity.y = FLAP_SPEED

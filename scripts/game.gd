@@ -1,7 +1,7 @@
 extends Node2D
 
 const SCROLL_SPEED: int = 2
-const PIPE_DELAY: int = 200
+const PIPE_DELAY: int = 100
 const PIPE_RANGE: int = 150
 var game_running: bool = false
 var game_over: bool = false
@@ -18,6 +18,7 @@ var hawk_tuah_audio: AudioStream = preload("res://assets/sfx/angry_hawk_tuah.mp3
 @onready var score_label: Label = $Background/ScoreLabel
 @onready var restart_button: CanvasLayer = $RestartButton
 @onready var audio_player: AudioStreamPlayer2D = $AudioPlayer
+@onready var instructions_label: Label = $Background/InstructionsLabel
 @export var pipe_scene: PackedScene
 
 
@@ -38,7 +39,7 @@ func _input(_event: InputEvent) -> void:  # There's probably a more efficient wa
 			else:
 				if player.flying:
 					player.flap()
-					if player.position.y < 0:  # Player is off the screen
+					if player.position.y < -(player.get_node("CollisionShape2D").shape.get_rect().position.y):  # Player's collision shape touches the roof
 						_stop_game()
 
 
@@ -71,6 +72,7 @@ func _new_game() -> void:
 	player.hawk = true
 	restart_button.hide()
 	_generate_pipes()
+	instructions_label.show()
 
 
 func _start_game() -> void:
@@ -78,6 +80,7 @@ func _start_game() -> void:
 	player.flying = true
 	player.flap()
 	pipe_timer.start()
+	instructions_label.hide()
 
 
 func _stop_game() -> void:
