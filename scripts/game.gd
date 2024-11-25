@@ -30,9 +30,11 @@ func _ready() -> void:
 		* ground.get_node("TileMapLayer").tile_set.tile_size.y
 	)
 	if Global.night_mode:
-		background.texture = load("res://assets/sprites/night_background.png")
+		background.set_texture(load("res://assets/sprites/night_background.png"))
+		get_window().set_title("Hawky Tuah (Night Mode)")
 	else:
-		background.texture = load("res://assets/sprites/background.png")
+		background.set_texture(load("res://assets/sprites/background.png"))
+		get_window().set_title("Hawky Tuah")
 	_new_game()
 
 
@@ -72,7 +74,7 @@ func _new_game() -> void:
 	get_tree().call_group("pipes", "queue_free")
 	scroll = 0
 	score = 0
-	score_label.text = "SCORE: " + str(score)
+	score_label.set_text("SCORE: " + str(score))
 	player.reset()
 	player.hawk = true
 	restart_button.hide()
@@ -90,7 +92,7 @@ func _start_game() -> void:
 
 func _stop_game() -> void:
 	if not game_over:
-		audio_player.stream = hawk_tuah_audio
+		audio_player.set_stream(hawk_tuah_audio)
 		audio_player.play()
 
 	player.flying = false
@@ -122,9 +124,9 @@ func _on_ground_hit() -> void:
 func _update_score() -> void:
 	score += 1
 	if score % 5 == 0:
-		audio_player.stream = score_up_audio
+		audio_player.set_stream(score_up_audio)
 		audio_player.play()
-	score_label.text = "SCORE: " + str(score)
+	score_label.set_text("SCORE: " + str(score))
 
 
 func _on_restart_button() -> void:
