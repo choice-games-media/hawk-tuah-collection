@@ -2,6 +2,7 @@ extends Control
 
 @onready var play_button: Button = $MainMenu/MenuButtons/PlayButton
 @onready var exit_button: Button = $MainMenu/MenuButtons/ExitButton
+@onready var tooltip: Label = $MainMenu/Tooltip
 
 
 func _set_menu_visibility(mode: bool) -> void:
@@ -32,3 +33,36 @@ func _on_hawky_tuah_pressed() -> void:
 	get_window().size = Vector2i(512, 608)
 	get_window().move_to_center()
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
+
+
+func _on_button_mouse_exited() -> void:
+	tooltip.text = ""
+
+
+func _on_play_button_mouse_entered() -> void:
+	tooltip.text = "That's right, there's multiple of these abominations now!"
+
+
+func _on_exit_button_mouse_entered() -> void:
+	tooltip.text = "Closes the game. You could also click the X button, but this lets me add more buttons to the menu."
+
+
+func _on_return_button_mouse_entered() -> void:
+	tooltip.text = "Return to the main menu."
+
+
+func _on_hawky_tuah_mouse_entered() -> void:
+	tooltip.text = "The original Flappy Bird clone!"
+
+
+func _on_hawky_tuah_hyper_mouse_entered() -> void:
+	tooltip.text = "Hawky Tuah, but scroll speed passively increases over time - how far can you get? (In development)"
+
+
+func _on_hawksweeper_mouse_entered() -> void:
+	tooltip.text = "Clean the grid while avoiding mines. Every empty tile has a number, telling you how many mines are touching it. (In development)"
+
+
+func _on_twenty_forty_tuah_mouse_entered() -> void:
+	# Now with save states and multiplayer!
+	tooltip.text = "Combine numbered tiles on a grid until you reach the mythical 2048. (In development)"

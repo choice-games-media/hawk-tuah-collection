@@ -59,6 +59,15 @@ layout_mode = 2
 theme = ExtResource("7_ur103")
 text = "Exit"
 
+[node name="Tooltip" type="Label" parent="MainMenu"]
+custom_minimum_size = Vector2(566, 23)
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("7_ur103")
+vertical_alignment = 2
+autowrap_mode = 3
+clip_text = true
+
 [node name="GameSelect" type="Control" parent="."]
 visible = false
 layout_mode = 2
@@ -96,7 +105,7 @@ size_flags_horizontal = 3
 theme = ExtResource("7_ur103")
 disabled = true
 text = "Hawky Tuah
-(Hyper Mode)"
+(Night Mode)"
 
 [node name="Hawksweeper" type="Button" parent="GameSelect/MiddleMargin/Games"]
 layout_mode = 2
@@ -121,18 +130,21 @@ theme = ExtResource("7_ur103")
 text = "Back to
 Menu"
 
-[node name="GameInfo" type="Label" parent="GameSelect"]
-offset_top = 291.0
-offset_right = 340.0
-offset_bottom = 314.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme = ExtResource("7_ur103")
-text = "This is some sample text. This is some sample text."
-
+[connection signal="mouse_entered" from="MainMenu/MenuButtons/PlayButton" to="." method="_on_play_button_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/MenuButtons/PlayButton" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="MainMenu/MenuButtons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="MainMenu/MenuButtons/ExitButton" to="." method="_on_exit_button_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/MenuButtons/ExitButton" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="MainMenu/MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="mouse_entered" from="GameSelect/MiddleMargin/Games/HawkyTuah" to="." method="_on_hawky_tuah_mouse_entered"]
+[connection signal="mouse_exited" from="GameSelect/MiddleMargin/Games/HawkyTuah" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="GameSelect/MiddleMargin/Games/HawkyTuah" to="." method="_on_hawky_tuah_pressed"]
+[connection signal="mouse_entered" from="GameSelect/MiddleMargin/Games/HawkyTuahHyper" to="." method="_on_hawky_tuah_hyper_mouse_entered"]
+[connection signal="mouse_exited" from="GameSelect/MiddleMargin/Games/HawkyTuahHyper" to="." method="_on_button_mouse_exited"]
+[connection signal="mouse_entered" from="GameSelect/MiddleMargin/Games/Hawksweeper" to="." method="_on_hawksweeper_mouse_entered"]
+[connection signal="mouse_exited" from="GameSelect/MiddleMargin/Games/Hawksweeper" to="." method="_on_button_mouse_exited"]
+[connection signal="mouse_entered" from="GameSelect/MiddleMargin/Games/TwentyFortyTuah" to="." method="_on_twenty_forty_tuah_mouse_entered"]
+[connection signal="mouse_exited" from="GameSelect/MiddleMargin/Games/TwentyFortyTuah" to="." method="_on_button_mouse_exited"]
+[connection signal="mouse_entered" from="GameSelect/MiddleMargin/Games/ReturnButton" to="." method="_on_return_button_mouse_entered"]
+[connection signal="mouse_exited" from="GameSelect/MiddleMargin/Games/ReturnButton" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="GameSelect/MiddleMargin/Games/ReturnButton" to="." method="_on_return_button_pressed"]
