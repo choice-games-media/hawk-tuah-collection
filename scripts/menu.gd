@@ -1,5 +1,6 @@
 extends Control
 
+var scene_data: Dictionary = {"game": Vector2i(512, 608)}
 @onready var play_button: Button = $MainMenu/MenuButtons/PlayButton
 @onready var exit_button: Button = $MainMenu/MenuButtons/ExitButton
 @onready var tooltip: Label = $MainMenu/Tooltip
@@ -17,6 +18,12 @@ func _set_menu_visibility(mode: bool) -> void:
 		node.visible = not mode
 
 
+func _swap_scenes(scene_name: String) -> void:
+	get_window().size = scene_data[scene_name]
+	get_window().move_to_center()
+	get_tree().change_scene_to_file("res://scenes/%s.tscn" % scene_name)
+
+
 func _on_play_button_pressed() -> void:
 	_set_menu_visibility(false)
 
@@ -30,9 +37,13 @@ func _on_return_button_pressed() -> void:
 
 
 func _on_hawky_tuah_pressed() -> void:
-	get_window().size = Vector2i(512, 608)
-	get_window().move_to_center()
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	Global.night_mode = false
+	_swap_scenes("game")
+
+
+func _on_hawky_tuah_hyper_pressed() -> void:
+	Global.night_mode = true
+	_swap_scenes("game")
 
 
 func _on_button_mouse_exited() -> void:

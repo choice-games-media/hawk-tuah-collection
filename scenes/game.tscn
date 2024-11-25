@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dob5tqgyakn3v"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_b2yd8"]
-[ext_resource type="Texture2D" uid="uid://cepyg81km0gpf" path="res://assets/sprites/background.png" id="1_ldf4p"]
 [ext_resource type="PackedScene" uid="uid://d2jql552jpv2o" path="res://scenes/pipe.tscn" id="2_1qnw0"]
 [ext_resource type="PackedScene" uid="uid://dqpdnen3mmpvt" path="res://scenes/player.tscn" id="2_3xabt"]
+[ext_resource type="Texture2D" uid="uid://ci7cgcekbjlig" path="res://assets/sprites/placeholder_background.png" id="3_g1y0l"]
 [ext_resource type="FontFile" uid="uid://c4b3jd5xsn4eo" path="res://assets/fonts/Pixeled.ttf" id="4_2whbe"]
 [ext_resource type="PackedScene" uid="uid://cielxlkut4td7" path="res://scenes/ground.tscn" id="4_jd8nd"]
 [ext_resource type="PackedScene" uid="uid://dq2gl6uil6db0" path="res://scenes/restart_button.tscn" id="7_5gqwf"]
@@ -14,7 +14,7 @@ pipe_scene = ExtResource("2_1qnw0")
 
 [node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
-texture = ExtResource("1_ldf4p")
+texture = ExtResource("3_g1y0l")
 offset = Vector2(128, 128)
 
 [node name="ScoreLabel" type="Label" parent="Background"]

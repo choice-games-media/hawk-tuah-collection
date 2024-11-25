@@ -19,6 +19,7 @@ var hawk_tuah_audio: AudioStream = preload("res://assets/sfx/angry_hawk_tuah.mp3
 @onready var restart_button: CanvasLayer = $RestartButton
 @onready var audio_player: AudioStreamPlayer2D = $AudioPlayer
 @onready var instructions_label: Label = $Background/InstructionsLabel
+@onready var background: Sprite2D = $Background
 @export var pipe_scene: PackedScene
 
 
@@ -28,6 +29,10 @@ func _ready() -> void:
 		ground.get_node("TileMapLayer").get_used_rect().size.y
 		* ground.get_node("TileMapLayer").tile_set.tile_size.y
 	)
+	if Global.night_mode:
+		background.texture = load("res://assets/sprites/night_background.png")
+	else:
+		background.texture = load("res://assets/sprites/background.png")
 	_new_game()
 
 
