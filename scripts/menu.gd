@@ -51,12 +51,11 @@ func _on_button_mouse_exited() -> void:
 
 
 func _on_play_button_mouse_entered() -> void:
-	tooltip.set_text("That's right, there's multiple of these abominations now!")
+	tooltip.set_text("That's right, there's multiple of these atrocities now!")
 
 
 func _on_exit_button_mouse_entered() -> void:
 	tooltip.set_text("Closes the game. You could also click the X button, but this lets me add more buttons to the menu.")
-
 
 func _on_return_button_mouse_entered() -> void:
 	tooltip.set_text("Return to the main menu.")
@@ -67,7 +66,7 @@ func _on_hawky_tuah_mouse_entered() -> void:
 
 
 func _on_hawky_tuah_hyper_mouse_entered() -> void:
-	tooltip.set_text("Hawky Tuah, but scroll speed passively increases over time - how far can you get? (In development)")
+	tooltip.set_text("Hawky Tuah, but scroll speed passively increases over time - how far can you get?")
 
 
 func _on_hawksweeper_mouse_entered() -> void:

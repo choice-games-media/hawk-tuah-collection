@@ -1,11 +1,11 @@
 extends Node2D
 
-const SCROLL_SPEED: int = 2
 const PIPE_DELAY: int = 100
 const PIPE_RANGE: int = 150
 var game_running: bool = false
 var game_over: bool = false
-var scroll: int
+var scroll_speed: float = 2
+var scroll: float
 var score: int
 var screen_size: Vector2i
 var ground_height: int
@@ -32,6 +32,7 @@ func _ready() -> void:
 	if Global.night_mode:
 		background.set_texture(load("res://assets/sprites/night_background.png"))
 		get_window().set_title("Hawky Tuah (Night Mode)")
+		pipe_timer.set_wait_time(pipe_timer.get_wait_time() * 1.5)
 	else:
 		background.set_texture(load("res://assets/sprites/background.png"))
 		get_window().set_title("Hawky Tuah")
@@ -46,13 +47,20 @@ func _input(_event: InputEvent) -> void:  # There's probably a more efficient wa
 			else:
 				if player.flying:
 					player.flap()
-					if player.position.y < -(player.get_node("CollisionShape2D").shape.get_rect().position.y):  # Player's collision shape touches the roof
+
+					# Dynamically gets the size of the collision shape
+					var player_collision_y: int = (
+						player.get_node("CollisionShape2D").get_shape().get_rect().position.y
+					)
+
+					# When the ENTIRE collision shape has touched the roof, end the game
+					if player.position.y < -(player_collision_y):
 						_stop_game()
 
 
 func _process(_delta: float) -> void:
 	if game_running:
-		scroll += SCROLL_SPEED
+		scroll += scroll_speed
 
 		if scroll >= screen_size.x:
 			scroll = 0
@@ -60,7 +68,12 @@ func _process(_delta: float) -> void:
 		ground.position.x = -scroll
 
 		for pipe in pipes:
-			pipe.position.x -= SCROLL_SPEED
+			pipe.position.x -= scroll_speed
+
+
+func _physics_process(delta: float) -> void:
+	if Global.night_mode:
+		scroll_speed += 0.25 * delta
 
 
 func _on_pipe_timer_timeout() -> void:
@@ -72,6 +85,7 @@ func _new_game() -> void:
 	game_over = false
 	pipes.clear()
 	get_tree().call_group("pipes", "queue_free")
+	scroll_speed = 2
 	scroll = 0
 	score = 0
 	score_label.set_text("SCORE: " + str(score))
