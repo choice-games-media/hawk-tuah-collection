@@ -32,6 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("7_ur103")
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
@@ -45,25 +46,22 @@ theme_override_constants/separation = 10
 [node name="Title" type="Label" parent="MainMenu/MenuButtons"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("7_ur103")
 theme_override_font_sizes/font_size = 16
 text = "Hawk Tuah Collection"
 
 [node name="PlayButton" type="Button" parent="MainMenu/MenuButtons"]
 layout_mode = 2
-theme = ExtResource("7_ur103")
 text = "Game Select"
 
 [node name="ExitButton" type="Button" parent="MainMenu/MenuButtons"]
 layout_mode = 2
-theme = ExtResource("7_ur103")
 text = "Exit"
 
 [node name="Tooltip" type="Label" parent="MainMenu"]
 custom_minimum_size = Vector2(566, 23)
 layout_mode = 2
 size_flags_vertical = 1
-theme = ExtResource("7_ur103")
+theme_override_font_sizes/font_size = 12
 vertical_alignment = 2
 autowrap_mode = 3
 clip_text = true
@@ -76,6 +74,7 @@ offset_left = 5.0
 offset_top = 5.0
 offset_right = 571.0
 offset_bottom = 319.0
+theme = ExtResource("7_ur103")
 
 [node name="MiddleMargin" type="MarginContainer" parent="GameSelect"]
 layout_mode = 1
@@ -96,27 +95,23 @@ size_flags_vertical = 0
 [node name="HawkyTuah" type="Button" parent="GameSelect/MiddleMargin/Games"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("7_ur103")
 text = "Hawky Tuah"
 
 [node name="HawkyTuahHyper" type="Button" parent="GameSelect/MiddleMargin/Games"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("7_ur103")
 text = "Hawky Tuah
 (Night Mode)"
 
 [node name="Hawksweeper" type="Button" parent="GameSelect/MiddleMargin/Games"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("7_ur103")
 disabled = true
 text = "Hawksweeper"
 
 [node name="TwentyFortyTuah" type="Button" parent="GameSelect/MiddleMargin/Games"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("7_ur103")
 disabled = true
 text = "Twenty Forty
 Tuah"
@@ -125,7 +120,6 @@ Tuah"
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = ExtResource("7_ur103")
 text = "Back to
 Menu"
 
