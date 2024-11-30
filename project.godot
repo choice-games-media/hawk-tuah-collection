@@ -30,6 +30,7 @@ gdscript/warnings/integer_division=0
 window/size/viewport_width=576
 window/size/viewport_height=324
 window/size/resizable=false
+window/subwindows/embed_subwindows=false
 
 [editor_plugins]
 

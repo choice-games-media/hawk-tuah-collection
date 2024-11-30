@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://06xqhxqmjfnw"]
+
+[node name="IntegrityWarning" type="AcceptDialog"]
+auto_translate_mode = 1
+title = "Hawk Tuah Collection"
+initial_position = 1
+dialog_text = "Save file integrity check failed."
