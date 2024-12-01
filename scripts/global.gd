@@ -7,7 +7,7 @@ var config: ConfigFile = ConfigFile.new()
 
 func _ready():
 	var integrity_warning: AcceptDialog = (
-		preload("res://scenes/integrity_warning.tscn").instantiate()
+		preload("res://scenes/menu/integrity_warning.tscn").instantiate()
 	)
 
 	if not FileAccess.file_exists(FILE_NAME):
