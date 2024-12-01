@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://dob5tqgyakn3v"]
 
-[ext_resource type="Script" path="res://scripts/game.gd" id="1_b2yd8"]
-[ext_resource type="PackedScene" uid="uid://d2jql552jpv2o" path="res://scenes/pipe.tscn" id="2_1qnw0"]
-[ext_resource type="PackedScene" uid="uid://dqpdnen3mmpvt" path="res://scenes/player.tscn" id="2_3xabt"]
-[ext_resource type="Texture2D" uid="uid://ci7cgcekbjlig" path="res://assets/sprites/placeholder_background.png" id="3_g1y0l"]
-[ext_resource type="FontFile" uid="uid://c4b3jd5xsn4eo" path="res://assets/fonts/Pixeled.ttf" id="4_2whbe"]
-[ext_resource type="PackedScene" uid="uid://cielxlkut4td7" path="res://scenes/ground.tscn" id="4_jd8nd"]
-[ext_resource type="PackedScene" uid="uid://dq2gl6uil6db0" path="res://scenes/restart_button.tscn" id="7_5gqwf"]
+[ext_resource type="Script" path="res://scripts/hawky-tuah/game.gd" id="1_b2yd8"]
+[ext_resource type="PackedScene" uid="uid://d2jql552jpv2o" path="res://scenes/hawky-tuah/pipe.tscn" id="2_1qnw0"]
+[ext_resource type="PackedScene" uid="uid://dqpdnen3mmpvt" path="res://scenes/hawky-tuah/player.tscn" id="2_3xabt"]
+[ext_resource type="Texture2D" uid="uid://ci7cgcekbjlig" path="res://assets/hawky-tuah/sprites/placeholder_background.png" id="3_g1y0l"]
+[ext_resource type="FontFile" uid="uid://c4b3jd5xsn4eo" path="res://assets/common/fonts/Pixeled.ttf" id="4_2whbe"]
+[ext_resource type="PackedScene" uid="uid://cielxlkut4td7" path="res://scenes/hawky-tuah/ground.tscn" id="4_jd8nd"]
+[ext_resource type="PackedScene" uid="uid://dq2gl6uil6db0" path="res://scenes/hawky-tuah/restart_button.tscn" id="7_5gqwf"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_b2yd8")

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cimesn601ahqk"
-path="res://.godot/imported/hailey.png-937fb7ade70b07d7fcf9f7cdf9a7b380.ctex"
+path="res://.godot/imported/hailey.png-18d5091703ae18a27fba96f7c1942d6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/hailey.png"
-dest_files=["res://.godot/imported/hailey.png-937fb7ade70b07d7fcf9f7cdf9a7b380.ctex"]
+source_file="res://assets/hawky-tuah/sprites/hailey.png"
+dest_files=["res://.godot/imported/hailey.png-18d5091703ae18a27fba96f7c1942d6b.ctex"]
 
 [params]
 

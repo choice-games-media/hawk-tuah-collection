@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cepyg81km0gpf"
-path="res://.godot/imported/background.png-dde469fb1f19281f3784b52d4bea96cd.ctex"
+uid="uid://cf4h4ltsurhvw"
+path="res://.godot/imported/tileset.png-6df6fb48b3d5693851e53bd917a609c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/background.png"
-dest_files=["res://.godot/imported/background.png-dde469fb1f19281f3784b52d4bea96cd.ctex"]
+source_file="res://assets/hawky-tuah/sprites/tileset.png"
+dest_files=["res://.godot/imported/tileset.png-6df6fb48b3d5693851e53bd917a609c6.ctex"]
 
 [params]
 

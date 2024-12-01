@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3wrjxk2s4ovw"
-path="res://.godot/imported/icon.png-b6a7fb2db36edd3d95dc42f1dc8c1c5d.ctex"
+uid="uid://ci7cgcekbjlig"
+path="res://.godot/imported/placeholder_background.png-9561ea158b6cd076d7a1330390db6fa3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icon.png"
-dest_files=["res://.godot/imported/icon.png-b6a7fb2db36edd3d95dc42f1dc8c1c5d.ctex"]
+source_file="res://assets/hawky-tuah/sprites/placeholder_background.png"
+dest_files=["res://.godot/imported/placeholder_background.png-9561ea158b6cd076d7a1330390db6fa3.ctex"]
 
 [params]
 

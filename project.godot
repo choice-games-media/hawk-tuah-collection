@@ -11,11 +11,11 @@ config_version=5
 [application]
 
 config/name="Hawk Tuah Collection"
-run/main_scene="res://scenes/menu.tscn"
+run/main_scene="res://scenes/menu/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 run/max_fps=60
-boot_splash/image="res://assets/icon.png"
-config/icon="res://assets/icon.png"
+boot_splash/image="res://assets/common/icon.png"
+config/icon="res://assets/common/icon.png"
 
 [autoload]
 
