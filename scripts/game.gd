@@ -12,14 +12,15 @@ var ground_height: int
 var pipes: Array
 var score_up_audio: AudioStream = preload("res://assets/sfx/spit_on_that_thang.mp3")
 var hawk_tuah_audio: AudioStream = preload("res://assets/sfx/angry_hawk_tuah.mp3")
+@onready var background: Sprite2D = $Background
+@onready var score_label: Label = $Background/MarginContainer/ScoreLabel
+@onready var high_score_label: Label = $Background/MarginContainer/HighScoreLabel
+@onready var instructions_label: Label = $Background/MarginContainer/InstructionsLabel
 @onready var player: CharacterBody2D = $Player
 @onready var ground: Area2D = $Ground
 @onready var pipe_timer: Timer = $PipeTimer
-@onready var score_label: Label = $Background/ScoreLabel
 @onready var restart_button: CanvasLayer = $RestartButton
 @onready var audio_player: AudioStreamPlayer2D = $AudioPlayer
-@onready var instructions_label: Label = $Background/InstructionsLabel
-@onready var background: Sprite2D = $Background
 @export var pipe_scene: PackedScene
 
 
@@ -89,6 +90,10 @@ func _new_game() -> void:
 	scroll = 0
 	score = 0
 	score_label.set_text("SCORE: " + str(score))
+	if Global.night_mode:
+		high_score_label.set_text("BEST: " + str(Global.get_save("hawky_tuah_night_best")))
+	else:
+		high_score_label.set_text("BEST: " + str(Global.get_save("hawky_tuah_best")))
 	player.reset()
 	player.hawk = true
 	restart_button.hide()
@@ -137,10 +142,23 @@ func _on_ground_hit() -> void:
 
 func _update_score() -> void:
 	score += 1
+
 	if score % 5 == 0:
 		audio_player.set_stream(score_up_audio)
 		audio_player.play()
 	score_label.set_text("SCORE: " + str(score))
+
+	var current_best_score = "night_" if Global.night_mode else ""
+	current_best_score = "hawky_tuah_" + current_best_score + "best"
+
+	if score > Global.get_save(current_best_score):
+		high_score_label.set_text("NEW BEST: " + str(score))
+		Global.set_save(current_best_score, score)
+
+	if Global.night_mode:
+		Global.set_save("coins", Global.get_save("coins") + 2)
+	else:
+		Global.set_save("coins", Global.get_save("coins") + 1)
 
 
 func _on_restart_button() -> void:

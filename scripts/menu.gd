@@ -41,7 +41,7 @@ func _on_hawky_tuah_pressed() -> void:
 	_swap_scenes("game")
 
 
-func _on_hawky_tuah_hyper_pressed() -> void:
+func _on_hawky_tuah_night_pressed() -> void:
 	Global.night_mode = true
 	_swap_scenes("game")
 
@@ -65,7 +65,7 @@ func _on_hawky_tuah_mouse_entered() -> void:
 	tooltip.set_text("The original Flappy Bird clone!")
 
 
-func _on_hawky_tuah_hyper_mouse_entered() -> void:
+func _on_hawky_tuah_night_mouse_entered() -> void:
 	tooltip.set_text("Hawky Tuah, but scroll speed passively increases over time - how far can you get?")
 
 

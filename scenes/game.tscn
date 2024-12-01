@@ -17,34 +17,41 @@ scale = Vector2(2, 2)
 texture = ExtResource("3_g1y0l")
 offset = Vector2(128, 128)
 
-[node name="ScoreLabel" type="Label" parent="Background"]
-z_index = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -128.0
-offset_right = 128.0
-offset_bottom = 23.0
+[node name="MarginContainer" type="MarginContainer" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-size_flags_horizontal = 4
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ScoreLabel" type="Label" parent="Background/MarginContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("4_2whbe")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 10
 text = "SCORE: 0"
 horizontal_alignment = 1
 
-[node name="InstructionsLabel" type="Label" parent="Background"]
+[node name="HighScoreLabel" type="Label" parent="Background/MarginContainer"]
 z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -87.0
-offset_top = -37.5
-offset_right = 87.0
-offset_bottom = 37.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("4_2whbe")
+theme_override_font_sizes/font_size = 10
+text = "BEST: 0"
+horizontal_alignment = 1
+
+[node name="InstructionsLabel" type="Label" parent="Background/MarginContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("4_2whbe")
 theme_override_font_sizes/font_size = 10
 text = "Press Space, up arrow,
