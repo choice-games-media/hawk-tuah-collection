@@ -13,6 +13,11 @@ func _ready():
 	if not FileAccess.file_exists(FILE_NAME):
 		var time: String = str(Time.get_unix_time_from_system())  # This loses precision if kept in float form
 		config.set_value("core", "salt", time)
+		config.set_value("core", "checksum", generate_checksum())
+		config.set_value("game_data", "coins", 0)
+		config.set_value("game_data", "hawky_tuah_best", 0)
+		config.set_value("game_data", "hawky_tuah_night_best", 0)
+		config.save(FILE_NAME)
 	config.load(FILE_NAME)
 
 	var old_checksum: String = config.get_value("core", "checksum")
