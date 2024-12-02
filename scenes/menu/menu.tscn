@@ -6,23 +6,20 @@
 
 [node name="Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -288.0
-offset_top = -162.0
-offset_right = 288.0
-offset_bottom = 162.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_88m03")
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 576.0
-offset_bottom = 324.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_h2r6j")
 
 [node name="MainMenu" type="MarginContainer" parent="."]
@@ -33,10 +30,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_ek28m")
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="MenuButtons" type="VBoxContainer" parent="MainMenu"]
 layout_mode = 2
@@ -46,7 +43,7 @@ theme_override_constants/separation = 10
 [node name="Title" type="Label" parent="MainMenu/MenuButtons"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 text = "Hawk Tuah Collection"
 
 [node name="PlayButton" type="Button" parent="MainMenu/MenuButtons"]
@@ -61,19 +58,19 @@ text = "Exit"
 custom_minimum_size = Vector2(566, 23)
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 24
 vertical_alignment = 2
 autowrap_mode = 3
 clip_text = true
 
 [node name="GameSelect" type="Control" parent="."]
 visible = false
-layout_mode = 2
-anchors_preset = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 571.0
-offset_bottom = 319.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("3_ek28m")
 
 [node name="MiddleMargin" type="MarginContainer" parent="GameSelect"]
@@ -83,45 +80,45 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 55
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 25
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 105
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 400
 
 [node name="Games" type="HBoxContainer" parent="GameSelect/MiddleMargin"]
 layout_mode = 2
-size_flags_vertical = 0
 
 [node name="HawkyTuah" type="Button" parent="GameSelect/MiddleMargin/Games"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Hawky Tuah"
+autowrap_mode = 3
 
 [node name="HawkyTuahNight" type="Button" parent="GameSelect/MiddleMargin/Games"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Hawky Tuah
-(Night Mode)"
+text = "Hawky Tuah (Night Mode)"
+autowrap_mode = 3
 
 [node name="Hawksweeper" type="Button" parent="GameSelect/MiddleMargin/Games"]
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
 text = "Hawksweeper"
+autowrap_mode = 3
 
 [node name="TwentyFortyTuah" type="Button" parent="GameSelect/MiddleMargin/Games"]
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
-text = "Twenty Forty
-Tuah"
+text = "Twenty Forty Tuah"
+autowrap_mode = 3
 
 [node name="ReturnButton" type="Button" parent="GameSelect/MiddleMargin/Games"]
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-text = "Back to
-Menu"
+size_flags_horizontal = 3
+text = "Back to Menu"
+autowrap_mode = 3
 
 [connection signal="mouse_entered" from="MainMenu/MenuButtons/PlayButton" to="." method="_on_play_button_mouse_entered"]
 [connection signal="mouse_exited" from="MainMenu/MenuButtons/PlayButton" to="." method="_on_button_mouse_exited"]
