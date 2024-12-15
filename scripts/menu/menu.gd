@@ -57,12 +57,13 @@ func _on_play_button_mouse_entered() -> void:
 func _on_exit_button_mouse_entered() -> void:
 	tooltip.set_text("Closes the game. You could also click the X button, but this lets me add more buttons to the menu.")
 
+
 func _on_return_button_mouse_entered() -> void:
 	tooltip.set_text("Return to the main menu.")
 
 
 func _on_hawky_tuah_mouse_entered() -> void:
-	tooltip.set_text("The original Flappy Bird clone!")
+	tooltip.set_text("Flappy Bird clone, the game that (unfortunately) began it all. Fly through columns of pipes with some... new additions.")
 
 
 func _on_hawky_tuah_night_mouse_entered() -> void:
@@ -70,9 +71,9 @@ func _on_hawky_tuah_night_mouse_entered() -> void:
 
 
 func _on_hawksweeper_mouse_entered() -> void:
-	tooltip.set_text("Clean the grid while avoiding mines. Every empty tile has a number, telling you how many mines are touching it. (In development)")
+	tooltip.set_text("Minesweeper clone. Clean the grid while avoiding mines. Every empty tile has a number, telling you how many mines are touching it. (In development)")
 
 
 func _on_twenty_forty_tuah_mouse_entered() -> void:
 	# Now with save states and multiplayer!
-	tooltip.set_text("Combine numbered tiles on a grid until you reach the mythical 2048. (In development)")
+	tooltip.set_text("2048 clone. Combine numbered tiles on a grid until you reach the mythical Hawk Tuah tile. (In development)")

@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://btcbtgf4bsm2d"]
+
+[ext_resource type="FontFile" uid="uid://c4b3jd5xsn4eo" path="res://assets/common/fonts/Pixeled.ttf" id="1_wc7he"]
+[ext_resource type="FontFile" uid="uid://c80dpd6hku4gd" path="res://assets/common/fonts/alagard.ttf" id="2_0wau0"]
+
+[resource]
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_wc7he")
+HBoxContainer/constants/separation = 10
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("2_0wau0")
+MarginContainer/constants/margin_bottom = 50
+MarginContainer/constants/margin_left = 50
+MarginContainer/constants/margin_right = 50
+MarginContainer/constants/margin_top = 50
+VBoxContainer/constants/separation = 20

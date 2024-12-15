@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/menu/menu.gd" id="1_88m03"]
 [ext_resource type="Texture2D" uid="uid://cvykxu6ljxnw8" path="res://assets/menu/sprites/menu_background.png" id="2_h2r6j"]
-[ext_resource type="Theme" uid="uid://btcbtgf4bsm2d" path="res://assets/common/text.tres" id="3_ek28m"]
+[ext_resource type="Theme" uid="uid://btcbtgf4bsm2d" path="res://assets/menu/themes/menu.tres" id="3_ek28m"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -30,20 +30,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_ek28m")
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
 
 [node name="MenuButtons" type="VBoxContainer" parent="MainMenu"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/separation = 10
 
 [node name="Title" type="Label" parent="MainMenu/MenuButtons"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "Hawk Tuah Collection"
 
 [node name="PlayButton" type="Button" parent="MainMenu/MenuButtons"]
@@ -58,7 +53,6 @@ text = "Exit"
 custom_minimum_size = Vector2(566, 23)
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 24
 vertical_alignment = 2
 autowrap_mode = 3
 clip_text = true
@@ -80,9 +74,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 105
-theme_override_constants/margin_right = 10
+theme_override_constants/margin_top = 130
 theme_override_constants/margin_bottom = 400
 
 [node name="Games" type="HBoxContainer" parent="GameSelect/MiddleMargin"]
