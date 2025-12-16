@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://d2jql552jpv2o"]
 
 [ext_resource type="TileSet" uid="uid://bwcksl82rseej" path="res://assets/hawky-tuah/sprites/tileset.tres" id="1_5sox5"]
-[ext_resource type="Script" path="res://scripts/hawky-tuah/pipe.gd" id="1_6kok1"]
+[ext_resource type="Script" uid="uid://ctrcc7ipf3gxt" path="res://scripts/hawky-tuah/pipe.gd" id="1_6kok1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6os7j"]
 size = Vector2(64, 32)

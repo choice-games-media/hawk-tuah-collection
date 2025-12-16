@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dqpdnen3mmpvt"]
 
-[ext_resource type="Script" path="res://scripts/hawky-tuah/player.gd" id="1_3agbv"]
+[ext_resource type="Script" uid="uid://c5l3dfvg0rnuk" path="res://scripts/hawky-tuah/player.gd" id="1_3agbv"]
 [ext_resource type="Texture2D" uid="uid://cimesn601ahqk" path="res://assets/hawky-tuah/sprites/hailey.png" id="2_7k171"]
 [ext_resource type="AudioStream" uid="uid://c0fflnq3kbccc" path="res://assets/hawky-tuah/sfx/hawk.mp3" id="3_rbyxk"]
 [ext_resource type="AudioStream" uid="uid://bjjv6p76lek3y" path="res://assets/hawky-tuah/sfx/tuah.mp3" id="4_mjh5l"]

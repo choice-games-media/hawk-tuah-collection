@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=4 uid="uid://cielxlkut4td7"]
 
-[ext_resource type="Script" path="res://scripts/hawky-tuah/ground.gd" id="1_ois4j"]
+[ext_resource type="Script" uid="uid://cusd7vhex8co" path="res://scripts/hawky-tuah/ground.gd" id="1_ois4j"]
 [ext_resource type="TileSet" uid="uid://bwcksl82rseej" path="res://assets/hawky-tuah/sprites/tileset.tres" id="2_ptsi4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tg0nq"]

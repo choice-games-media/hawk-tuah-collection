@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dq2gl6uil6db0"]
 
-[ext_resource type="Script" path="res://scripts/hawky-tuah/restart_button.gd" id="1_ribi1"]
+[ext_resource type="Script" uid="uid://2umfvjfjamwo" path="res://scripts/hawky-tuah/restart_button.gd" id="1_ribi1"]
 [ext_resource type="FontFile" uid="uid://c4b3jd5xsn4eo" path="res://assets/common/fonts/Pixeled.ttf" id="2_45tfl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p0qhl"]
