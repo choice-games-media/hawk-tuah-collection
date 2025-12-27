@@ -1,8 +1,9 @@
 extends Control
 
+# Scenes are stored in this format: Scene name, UID reference to the scene, window dimensions in Vector2i
 var scene_data: Dictionary = {
-	"hawky-tuah": Vector2i(512, 608),
-	"twenty-forty-tuah": Vector2i(500, 500)
+	"hawky-tuah": ["uid://dob5tqgyakn3v", Vector2i(512, 608)],
+	"twenty-forty-tuah": ["uid://csgl14occ1k6y", Vector2i(500, 500)]  # twenty-forty-tuah
 }
 @onready var play_button: Button = $MainMenu/MenuButtons/PlayButton
 @onready var exit_button: Button = $MainMenu/MenuButtons/ExitButton
@@ -21,10 +22,10 @@ func _set_menu_visibility(mode: bool) -> void:
 		node.set_visible(not mode)
 
 
-func _swap_scenes(folder: String, scene_name: String = "game") -> void:
-	get_window().set_size(scene_data[folder])
+func _swap_scenes(folder: String) -> void:
+	get_window().set_size(scene_data[folder][1])
 	get_window().move_to_center()
-	get_tree().change_scene_to_file("res://scenes/%s/%s.tscn" % [folder, scene_name])
+	get_tree().change_scene_to_file(scene_data[folder][0])
 
 
 func _on_play_button_pressed() -> void:

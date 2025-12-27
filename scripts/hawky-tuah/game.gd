@@ -10,8 +10,8 @@ var score: int
 var screen_size: Vector2i
 var ground_height: int
 var pipes: Array
-var score_up_audio: AudioStream = preload("res://assets/hawky-tuah/sfx/spit_on_that_thang.mp3")
-var hawk_tuah_audio: AudioStream = preload("res://assets/hawky-tuah/sfx/angry_hawk_tuah.mp3")
+var score_up_audio: AudioStream = preload("uid://dpwijtkqu3j8h")
+var hawk_tuah_audio: AudioStream = preload("uid://pmfihm3e61fi")
 @onready var background: Sprite2D = $Background
 @onready var score_label: Label = $Background/MarginContainer/ScoreLabel
 @onready var high_score_label: Label = $Background/MarginContainer/HighScoreLabel
@@ -31,11 +31,11 @@ func _ready() -> void:
 		* ground.get_node("TileMapLayer").tile_set.tile_size.y
 	)
 	if Global.night_mode:
-		background.set_texture(load("res://assets/hawky-tuah/sprites/night_background.png"))
+		background.set_texture(load("uid://c862ab86yjh7f"))
 		get_window().set_title("Hawky Tuah (Night Mode)")
 		pipe_timer.set_wait_time(pipe_timer.get_wait_time() * 1.5)
 	else:
-		background.set_texture(load("res://assets/hawky-tuah/sprites/background.png"))
+		background.set_texture(load("uid://cepyg81km0gpf"))
 		get_window().set_title("Hawky Tuah")
 	_new_game()
 

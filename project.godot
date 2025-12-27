@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Hawk Tuah Collection"
 run/main_scene="res://scenes/menu/menu.tscn"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 run/max_fps=60
 boot_splash/image="res://assets/common/icon.png"
 config/icon="res://assets/common/icon.png"
