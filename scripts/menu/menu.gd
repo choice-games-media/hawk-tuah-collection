@@ -1,6 +1,9 @@
 extends Control
 
-var scene_data: Dictionary = {"hawky-tuah": Vector2i(512, 608)}
+var scene_data: Dictionary = {
+	"hawky-tuah": Vector2i(512, 608),
+	"twenty-forty-tuah": Vector2i(500, 500)
+}
 @onready var play_button: Button = $MainMenu/MenuButtons/PlayButton
 @onready var exit_button: Button = $MainMenu/MenuButtons/ExitButton
 @onready var tooltip: Label = $MainMenu/Tooltip
@@ -18,7 +21,7 @@ func _set_menu_visibility(mode: bool) -> void:
 		node.set_visible(not mode)
 
 
-func _swap_scenes(folder: String, scene_name: String) -> void:
+func _swap_scenes(folder: String, scene_name: String = "game") -> void:
 	get_window().set_size(scene_data[folder])
 	get_window().move_to_center()
 	get_tree().change_scene_to_file("res://scenes/%s/%s.tscn" % [folder, scene_name])
@@ -38,12 +41,16 @@ func _on_return_button_pressed() -> void:
 
 func _on_hawky_tuah_pressed() -> void:
 	Global.night_mode = false
-	_swap_scenes("hawky-tuah", "game")
+	_swap_scenes("hawky-tuah")
 
 
 func _on_hawky_tuah_night_pressed() -> void:
 	Global.night_mode = true
-	_swap_scenes("hawky-tuah", "game")
+	_swap_scenes("hawky-tuah")
+
+
+func _on_twenty_forty_tuah_pressed() -> void:
+	_swap_scenes("twenty-forty-tuah")
 
 
 func _on_button_mouse_exited() -> void:
